@@ -7,7 +7,7 @@ client.on('ready', () => {
 })
 client.on('message', msg=> {
     if(msg.content === 'sa') {
-        msg.reply('as');
+        msg.reply('as!');
     }
 });
 
