@@ -13,7 +13,7 @@ command(client, 'ping', message=> {
 
 client.on('message', msg=> {
     if(msg.content === 'sa') {
-        msg.reply('as.');
+        msg.reply('as');
     }
 });
 
