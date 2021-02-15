@@ -3,7 +3,7 @@ const client = new Discord.Client()
 // const config = require('./config.json')
 const command = require('./command')
 
-client.on('ready', () => {
+client.on('ready', function(message) {
     const botdev = '274235277969588225'
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
     message.botdev.send('Hazırım kaptan!')
