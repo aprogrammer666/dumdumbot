@@ -4,7 +4,9 @@ const client = new Discord.Client()
 const command = require('./command')
 
 client.on('ready', () => {
+    const botdev = '274235277969588225'
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
+    message.botdev.send('Hazırım kaptan!')
 });
 // 'sa' yazanlara karşılık olarak 'as' cevabını veriyor.
 client.on('message', function(message) {
@@ -13,7 +15,7 @@ client.on('message', function(message) {
     }
 client.on('error', function(error) {
     const botdev = '274235277969588225'
-    message.author1.send(error)
+    message.botdev.send(error)
 })
 });
   // .ping >> Pong!   | Made for test purposes.  
