@@ -6,7 +6,7 @@ const command = require('./command')
 client.on('ready', function(message) {
     const botdev = '274235277969588225'
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
-    message.botdev.sendMessage('Hazırım kaptan!')
+    client.users.get("botdev").send("Hazırım kaptan!");
 });
 // 'sa' yazanlara karşılık olarak 'as' cevabını veriyor.
 client.on('message', function(message) {
