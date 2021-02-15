@@ -7,7 +7,7 @@ client.on('ready', () => {
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
 })
 client.on('message', function(message) {
-    message.channel.send(message.content)
+    message.channel.send(message)
 })
 
 
