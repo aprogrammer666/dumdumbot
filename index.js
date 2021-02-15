@@ -5,14 +5,18 @@ const command = require('./command')
 const firstMessage = require('./firstmessage.js')
 
 client.on('ready', () => {
-    console.log('Hazirim kaptan!')
-    firstMessage(client, '', 'hello world', [''])
+    console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
+})
+client.on('message', function(message) {
+    message.channel.send(content.message)
+})
 
-    
+
+  // .ping >> Pong!   | Made for test purposes.  
   command(client, 'ping', (message) => {
-      message.channel.send('Pong!')
+      message.channel.send('Pong!') 
   })
-  
+  // Botun dahil olduğu sunucular ve o sunuculardaki üye sayıları hakkında bilgi verir.
   command(client, 'botbilgisi', (message) => {
       message.channel.send('**Şu sunucularda bulunuyorum**')
       client.guilds.cache.forEach((guild) => {     
@@ -30,7 +34,7 @@ client.on('ready', () => {
           })
       }
   })
-  
+  // ".status <input>" şeklinde botun durumunu ayarlamamızı sağlayan komut.
   command(client, 'status', (message) => {
       const content = message.content.replace('.status ', '')
   
@@ -42,7 +46,6 @@ client.on('ready', () => {
           }
       })
   } )
-})
 
 
 client.login(process.env.djs_token)
