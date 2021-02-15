@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 // const config = require('./config.json')
 const command = require('./command')
-const firstMessage = require('./firstmessage.js')
 
 client.on('ready', () => {
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
