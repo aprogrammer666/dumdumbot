@@ -6,10 +6,6 @@ const command = require('./command')
 client.on('ready', () => {
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
 })
-client.on('message', function(message) {
-    message.channel.send(message)
-})
-
 
   // .ping >> Pong!   | Made for test purposes.  
   command(client, 'ping', (message) => {
