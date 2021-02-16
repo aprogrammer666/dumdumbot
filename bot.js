@@ -19,7 +19,12 @@ client.on('message', function(message) {
 
 command(client, 'play', (message) => {
     const music2 = message.content;
-    connection.play(ytdl(music2, { filter: 'audioonly' }));
+    if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+      connection.play(ytdl(music2, { filter: 'audioonly' }));
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
 })
 // .ping >> Pong!   | Made for test purposes.  
 command(client, 'ping', (message) => {
