@@ -5,9 +5,8 @@ const command = require('./command')
 const ytdl = require('ytdl-core')
 
 client.on('ready', function(message) {
-    const botdev = '274235277969588225'
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
-    client.users.get("botdev").send("Hazırım kaptan!");
+    client.user.id("274235277969588225").send("Hazırım kaptan!");
 });
 // 'sa' yazanlara karşılık olarak 'as' cevabını veriyor.
 client.on('message', function(message) {
@@ -17,15 +16,6 @@ client.on('message', function(message) {
 });
 
 
-command(client, 'play', (message) => {
-    const music2 = message.content;
-    if (message.member.voice.channel) {
-      const connection = await message.member.voice.channel.join();
-      connection.play(ytdl(music2, { filter: 'audioonly' }));
-    } else {
-      message.reply('You need to join a voice channel first!');
-    }
-})
 // .ping >> Pong!   | Made for test purposes.  
 command(client, 'ping', (message) => {
     message.channel.send('Pong!') 
@@ -45,6 +35,7 @@ command(client, 'toplusil', (message) => {
         message.channel.messages.fetch().then(results => {
             console.log(results)
             message.channel.bulkDelete(results)
+            message.channel.send('Bu kanaldaki silebildiğim bütün mesajlar başarıyla silindi!')
         });
     }
 });
