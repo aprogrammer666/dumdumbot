@@ -30,8 +30,8 @@ client.on('message', function(message) {
       if (!args[2]) return message.reply('.love kisi1 kisi2 | Şeklinde kullanabilirsiniz.');
       var rnumber = Math.floor(Math.random() * 100) + 1;
       message.channel.send()
-*/
 })
+*/
 // .ping >> Pong!   | Klasik.
 command(client, 'ping', (message) => {
     message.channel.send('Pong!') 
