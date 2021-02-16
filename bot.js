@@ -4,6 +4,15 @@ const config = require('./config.json')
 const command = require('./command')
 const ytdl = require('ytdl-core')
 
+
+////////////////////////////////////////////////////////////////
+// Made by minato#6173                                        //
+// Github: https://github.com/aprogrammer666                  //
+// Steam: https://steamcommunity.com/id/professorgrizwald666/ //
+// I'll also make a website-managed version.                  //
+////////////////////////////////////////////////////////////////
+
+
 client.on('ready', function(message) {
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
     client.user.id("274235277969588225").send("Hazırım kaptan!");
@@ -15,8 +24,14 @@ client.on('message', function(message) {
     }
 });
 
-
-// .ping >> Pong!   | Made for test purposes.  
+command(client, 'love', message => {
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    const command = args.shift().toLowerCase();
+    if (!args[2]) return message.reply('.love kisi1 kisi2 | Şeklinde kullanabilirsiniz.');
+    var rnumber = Math.floor(Math.random() * 100) + 1;
+    message.channel.send()
+})
+// .ping >> Pong!   | Klasik.
 command(client, 'ping', (message) => {
     message.channel.send('Pong!') 
 })
@@ -29,7 +44,7 @@ command(client, 'botbilgisi', (message) => {
         )
     });
 });
-
+// Yazılan kanaldaki silinebilen bütün mesajları siler. (Botlar 14 günden eski mesajları silemez.)
 command(client, 'toplusil', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
         message.channel.messages.fetch().then(results => {
@@ -50,6 +65,15 @@ command(client, 'status', (message) => {
 
         }
     });
+// .duyuru <mesaj> || Adminlerin sunucuda duyuru yapabilmesini sağlayan bir komut.
+command(client, 'duyuru', (message) => {
+    if (message.member.hasPermission('ADMINISTRATOR')) {
+    let embedDuyuru = message.content.substring(8)
+    let embed = new Discord.MessageEmbed();
+    } else {
+        message.reply('Bu komudu sadece adminler kullanabilir.')
+    }
+})
 } )
 
 // Hayır, tokenimi çalamazsınız ;)
