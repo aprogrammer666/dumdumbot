@@ -32,10 +32,12 @@ client.on('message', function(message) {
       message.channel.send()
 })
 */
+
 // .ping >> Pong!   | Klasik.
 command(client, 'ping', (message) => {
     message.channel.send('Pong!') 
 })
+
 // Botun dahil olduğu sunucular ve o sunuculardaki üye sayıları hakkında bilgi verir.
 command(client, 'botbilgisi', (message) => {
     message.channel.send('**Şu sunucularda bulunuyorum**')
@@ -45,6 +47,7 @@ command(client, 'botbilgisi', (message) => {
         )
     });
 });
+
 // Yazılan kanaldaki silinebilen bütün mesajları siler. (Botlar 14 günden eski mesajları silemez.)
 command(client, 'toplusil', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
@@ -55,6 +58,7 @@ command(client, 'toplusil', (message) => {
         });
     }
 });
+
 // ".status <input>" şeklinde botun durumunu ayarlamamızı sağlayan komut.
 command(client, 'status', (message) => {
     const content = message.content.replace('.status ', '')
@@ -66,6 +70,7 @@ command(client, 'status', (message) => {
 
         }
     });
+})
 // .duyuru <mesaj> || Adminlerin sunucuda duyuru yapabilmesini sağlayan bir komut.
 command(client, 'duyuru', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
@@ -76,7 +81,7 @@ command(client, 'duyuru', (message) => {
         message.reply('Bu komudu sadece adminler kullanabilir.')
     }
 })
-} )
+
 
 // Hayır, tokenimi çalamazsınız ;)
 client.login(process.env.djs_token)
