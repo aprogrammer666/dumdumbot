@@ -52,7 +52,6 @@ command(client, 'botbilgisi', (message) => {
 command(client, 'toplusil', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
         message.channel.messages.fetch().then(results => {
-            console.log(results)
             message.channel.bulkDelete(results)
             message.channel.send('Bu kanaldaki silebildiğim bütün mesajlar başarıyla silindi!')
         });
@@ -71,12 +70,13 @@ command(client, 'status', (message) => {
         }
     });
 })
+
 // .duyuru <mesaj> || Adminlerin sunucuda duyuru yapabilmesini sağlayan bir komut.
 command(client, 'duyuru', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
-    let embedDuyuru = message.content.substring(8)
-    let embed = new Discord.MessageEmbed();
-    message.channel.send(embed);
+        let embedDuyuru = message.content.substring(9)
+        let embed = new Discord.MessageEmbed();
+        message.channel.send(embed);
     } else {
         message.reply('Bu komudu sadece adminler kullanabilir.')
     }
