@@ -1,7 +1,8 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-// const config = require('./config.json')
+const config = require('./config.json')
 const command = require('./command')
+const ytdl = require('ytdl-core')
 
 client.on('ready', function(message) {
     const botdev = '274235277969588225'
@@ -16,6 +17,10 @@ client.on('message', function(message) {
 });
 
 
+command(client, 'play', (message) => {
+    const music2 = message.content;
+    connection.play(ytdl(music2, { filter: 'audioonly' }));
+})
 // .ping >> Pong!   | Made for test purposes.  
 command(client, 'ping', (message) => {
     message.channel.send('Pong!') 
