@@ -15,7 +15,6 @@ const ytdl = require('ytdl-core')
 
 client.on('ready', function(message) {
     console.log('Hazirim kaptan!') // Bot aktif olunca konsolda bize haber veren mesaj.
-    client.user.id("274235277969588225").send("Hazırım kaptan!");
 });
 // 'sa' yazanlara karşılık olarak 'as' cevabını veriyor.
 client.on('message', function(message) {
@@ -72,6 +71,7 @@ command(client, 'duyuru', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
     let embedDuyuru = message.content.substring(8)
     let embed = new Discord.MessageEmbed();
+    message.channel.send(embed);
     } else {
         message.reply('Bu komudu sadece adminler kullanabilir.')
     }
