@@ -74,11 +74,11 @@ command(client, 'status', (message) => {
 // .duyuru <mesaj> || Adminlerin sunucuda duyuru yapabilmesini sağlayan bir komut.
 command(client, 'duyuru', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
-        let embedDuyuru = message.content.substring(9)
+        let embedDuyuru = message.content.substring(9);
         let embed = new Discord.MessageEmbed();
         message.channel.send(embed);
     } else {
-        message.reply('Bu komudu sadece adminler kullanabilir.')
+        message.reply('Bu komudu sadece adminler kullanabilir.');
     }
 })
 
