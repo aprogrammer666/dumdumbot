@@ -42,10 +42,11 @@ command(client, 'ping', (message) => {
 command(client, 'botbilgisi', (message) => {
     message.channel.send({content:  '**Şu sunucularda bulunuyorum**'})
     client.guilds.cache.forEach((guild) => {     
-        message.channel.send{
-            content: (
-                `>> ${guild.name} toplamda ${guild.memberCount} üyeye sahip.`
-        })
+        message.channel.send
+            ({
+                content:
+                    `>> ${guild.name} toplamda ${guild.memberCount} üyeye sahip.`
+            })
     });
 });
 
