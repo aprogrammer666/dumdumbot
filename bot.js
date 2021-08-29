@@ -1,4 +1,5 @@
-const Discord = require('discord.js')
+const { Client, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const client = new Discord.Client()
 const config = require('./config.json')
 const command = require('./command')
@@ -19,7 +20,7 @@ client.on('ready', function(message) {
 // 'sa' yazanlara karşılık olarak 'as' cevabını veriyor.
 client.on('message', function(message) {
     if(message.content.toLowerCase === 'sa') {
-        message.channel.send('as');
+        message.channel.send({ content: 'as'});
     }
 });
 
@@ -35,16 +36,17 @@ client.on('message', function(message) {
 
 // .ping >> Pong!   | Klasik.
 command(client, 'ping', (message) => {
-    message.channel.send('Pong!') 
+    message.channel.send({ content: 'Pong!' })
 })
 
 // Botun dahil olduğu sunucular ve o sunuculardaki üye sayıları hakkında bilgi verir.
 command(client, 'botbilgisi', (message) => {
-    message.channel.send('**Şu sunucularda bulunuyorum**')
+    message.channel.send(content: { '**Şu sunucularda bulunuyorum**'})
     client.guilds.cache.forEach((guild) => {     
-        message.channel.send(
-            `>> ${guild.name} toplamda ${guild.memberCount} üyeye sahip.`
-        )
+        message.channel.send{
+            content: (
+                `>> ${guild.name} toplamda ${guild.memberCount} üyeye sahip.`
+        })
     });
 });
 
@@ -53,7 +55,7 @@ command(client, 'toplusil', (message) => {
     if (message.member.hasPermission('ADMINISTRATOR')) {
         message.channel.messages.fetch().then(results => {
             message.channel.bulkDelete(results)
-            message.channel.send('Bu kanaldaki silebildiğim bütün mesajlar başarıyla silindi!')
+            message.channel.send({ content: 'Bu kanaldaki silebildiğim bütün mesajlar başarıyla silindi!' })
         });
     }
 });
