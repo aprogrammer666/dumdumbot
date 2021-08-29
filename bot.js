@@ -6,7 +6,7 @@ const ytdl = require('ytdl-core')
 
 
 ////////////////////////////////////////////////////////////////
-// Made by minato#6173                                        //
+// Made by minato#1337                                        //
 // Github: https://github.com/aprogrammer666                  //
 // Steam: https://steamcommunity.com/id/professorgrizwald666/ //
 // I'll also make a website-managed version.                  //
