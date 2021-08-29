@@ -40,7 +40,7 @@ command(client, 'ping', (message) => {
 
 // Botun dahil olduğu sunucular ve o sunuculardaki üye sayıları hakkında bilgi verir.
 command(client, 'botbilgisi', (message) => {
-    message.channel.send(content: { '**Şu sunucularda bulunuyorum**'})
+    message.channel.send({content:  '**Şu sunucularda bulunuyorum**'})
     client.guilds.cache.forEach((guild) => {     
         message.channel.send{
             content: (
